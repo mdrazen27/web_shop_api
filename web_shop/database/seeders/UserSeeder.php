@@ -18,9 +18,9 @@ class UserSeeder extends Seeder
 
         $first_name = 'first_name';
         $last_name = 'last_name';
-        $username = 'username';
         $email = 'email';
         $photo = 'photo';
+        $verified = 'verified';
         $admin = 'admin';
         $password = 'password';
 
@@ -28,7 +28,7 @@ class UserSeeder extends Seeder
             [
                 $first_name => 'Eris',
                 $last_name => 'Sutkovic',
-                $username => 'admineris',
+                $verified => 1,
                 $email => 'eris@admin.com',
                 $photo => '',
                 $admin => 1,
@@ -38,7 +38,7 @@ class UserSeeder extends Seeder
             [
                 $first_name => 'Antonije',
                 $last_name => 'Knezevic',
-                $username => 'adminantonije',
+                $verified => 1,
                 $email => 'antonije@admin.com',
                 $photo => '',
                 $admin => 1,
@@ -48,7 +48,7 @@ class UserSeeder extends Seeder
             [
                 $first_name => 'John',
                 $last_name => 'Doe',
-                $username => 'johndoe',
+                $verified => 0,
                 $email => 'johndoe@user.com',
                 $photo => '',
                 $admin => 0,
@@ -57,7 +57,7 @@ class UserSeeder extends Seeder
             [
                 $first_name => 'John2',
                 $last_name => 'Doe2',
-                $username => 'johndoe2',
+                $verified => 0,
                 $email => 'johndoe2@user.com',
                 $photo => '',
                 $admin => 0,
@@ -66,7 +66,7 @@ class UserSeeder extends Seeder
             [
                 $first_name => 'John3',
                 $last_name => 'Doe3',
-                $username => 'johndoe3',
+                $verified => 0,
                 $email => 'johndoe3@user.com',
                 $photo => '',
                 $admin => 0,

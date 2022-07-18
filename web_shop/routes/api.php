@@ -30,11 +30,11 @@ Route::get('/instrument-category',[InstrumentCategoryController::class,'index'])
 Route::get('/instrument-category/{instrument_category}',[InstrumentCategoryController::class,'show']);
 Route::get('/instruments-from-category/{instrument_category}',[InstrumentCategoryController::class,'categoryWithInstruments']);
 Route::get('/instrument/{instrument}',[InstrumentController::class,'show']);
+Route::get('/instrument',[InstrumentController::class,'index']);
 
 
 
 Route::group(['middleware' => ['auth:sanctum']],function(){
-    Route::get('/instrument',[InstrumentController::class,'index']);
     Route::post('/instrument-category',[InstrumentCategoryController::class,'store']);
     Route::put('/instrument-category/{instrument_category}',[InstrumentCategoryController::class,'update']);
     Route::delete('/instrument-category/{instrument_category}',[InstrumentCategoryController::class,'destroy']);

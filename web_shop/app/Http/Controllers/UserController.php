@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreUserRequest;
 use App\Models\User;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
@@ -10,15 +11,16 @@ use Illuminate\Support\Facades\Hash;
 class UserController extends Controller
 {
     //
-    public function registerUser(Request $request)
+    public function registerUser(StoreUserRequest $request)
     {
         $user = new User();
         $user->first_name = $request->first_name;
         $user->last_name = $request->last_name;
-        $user->username = $request->username;
+//        $user->username = $request->username;
         $user->email = $request->email;
         $user->photo = $request->photo;
         $user->admin = 0;
+        $user->verified = 0;
         $user->password = bcrypt($request->password);
 
         $user->save();
@@ -34,7 +36,7 @@ class UserController extends Controller
     public function login(Request $request):  JsonResponse
     {
 
-        $user = User::where('username','=',$request->username)->first();
+        $user = User::where('email','=',$request->email)->first();
 
         if(!$user || !Hash::check($request->password, $user->password)){
             return response()->json([
