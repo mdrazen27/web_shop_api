@@ -22,14 +22,18 @@ class UserController extends Controller
         $user->admin = 0;
         $user->verified = 0;
         $user->password = bcrypt($request->password);
+        $user->funds = 1000;
+
 
         $user->save();
-
+        $accessToken = $user->createToken('authToken');
 
         return response()->json([
             'success' => true,
             'message' => 'User created successfully!',
             'data' => $user,
+            'access_token' => $accessToken->plainTextToken,
+            'token_type' => 'Bearer'
         ], 200);
     }
 
