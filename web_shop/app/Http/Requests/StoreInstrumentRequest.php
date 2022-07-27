@@ -32,7 +32,10 @@ class StoreInstrumentRequest extends FormRequest
 //            'photo' => 'image',
             'description' => 'required',
             'instrument_category_id' => 'required|exists:instrument_categories,id',
-            'quantity' => 'required|min:1'
+            'quantity' => 'required|min:1',
+            'weight' => 'required',
+            'color' => 'required',
+            'dimensions' => 'required'
         ];
     }
 
@@ -40,13 +43,16 @@ class StoreInstrumentRequest extends FormRequest
     {
         return [
             'name.required' => 'Naziv instrumenta je obavezan',
-            'name.unique' => 'Vec postoji kategorija sa tim imenom',
+            'name.unique' => 'Vec postoji instrument sa tim imenom',
             'name.max' => 'Naziv kategorije je predug',
             'price.required' => 'Cijena je obavezna',
             'description.required' => 'Opis je obavezan',
             'quantity' => 'Dostupna kolicina je obavezna',
             'instrument_category_id.required' => 'Kategorija instrumenta je obavezna',
             'instrument_category_id.exists' => 'Kategorija instrumenta nije validna',
+            'weight.required' => 'tezina je obavezna',
+            'dimensions.required' => 'dimenzije su obavezne',
+            'color.required' => 'boja je obavezna'
         ];
     }
 

@@ -21,11 +21,11 @@ class InstrumentController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index(): JsonResponse
-    {
+    { $instruments = Instrument::paginate( $perPage = 4, $columns = ['*'], $pageName = 'page');
         return response()->json([
             'success' => true,
             'message' => 'All instruments received!',
-            'data' => Instrument::all(['id', 'photo', 'name', 'price', 'description']),
+            'data' => $instruments,
         ], 200);
     }
 
@@ -45,6 +45,9 @@ class InstrumentController extends Controller
         $instrument->price = $request->price;
         $instrument->photo = $request->photo;
         $instrument->instrument_category_id = $request->instrument_category_id;
+        $instrument->dimensions = $request->dimensions;
+        $instrument->weight = $request->weight;
+        $instrument->color = $request->color;
 
         $instrument->save();
 
@@ -96,7 +99,9 @@ class InstrumentController extends Controller
         $instrument->price = $request->price;
 
         $instrument->instrument_category_id = $request->instrument_category_id;
-
+        $instrument->dimensions = $request->dimensions;
+        $instrument->weight = $request->weight;
+        $instrument->color = $request->color;
         $instrument->save();
 
         return response()->json([
@@ -143,7 +148,7 @@ class InstrumentController extends Controller
     public function rateInstrument(StoreInstrumentGradeRequest $request): JsonResponse
     {
         Instrument::findOrFail($request->instrument);
-        $rate = InstrumentGrade::query()->where('instruments_id','=',$request->instrument,'and','users_id','=',Auth::id())->first();
+        $rate = InstrumentGrade::query()->where([['instruments_id','=',$request->instrument],['users_id','=',Auth::id()]])->first();
         if($rate){
             $rate->grade = $request->grade;
         }

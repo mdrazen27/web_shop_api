@@ -33,7 +33,10 @@ class UpdateInstrumentRequest extends FormRequest
 //            'photo' => 'image',
             'description' => 'required',
             'instrument_category_id' => 'required|exists:instrument_categories,id',
-            'quantity' => 'required|min:1'
+            'quantity' => 'required|min:1',
+            'weight' => 'required',
+            'color' => 'required',
+            'dimensions' => 'required'
         ];
     }
 
@@ -41,12 +44,15 @@ class UpdateInstrumentRequest extends FormRequest
     {
         return [
             'name.max' => 'Ime je predugo',
-            'name.unique' => 'Vec postoji isntrument sa time imenom',
+            'name.unique' => 'Vec postoji isntrument sa tim imenom',
 //            'photo.image' => 'Nedozvoljeni tip fajla',
             'description.required' => 'Opis je obavezan',
             'instrument_category_id.required' => 'Kategorija instrumenta je obavezna',
             'instrument_category_id.exists' => 'Kategorija instrumenta nije validna',
-            'quantity' => 'Kolicina je obavezna'
+            'quantity' => 'Kolicina je obavezna',
+            'weight.required' => 'tezina je obavezna',
+            'dimensions.required' => 'dimenzije su obavezne',
+            'color.required' => 'boja je obavezna'
         ];
     }
 
