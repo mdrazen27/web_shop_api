@@ -20,34 +20,39 @@ class InstrumentCategorySeeder extends Seeder
         $photo = 'photo';
         DB::table('instrument_categories')->insert([
             [
-                $name => 'gitare',
+                $name => 'Drums',
                 $create_user_id => 1,
-                $photo => '',
+                $photo => '/assets/drums.jpg',
             ],
             [
-                $name => 'klaviri',
+                $name => 'Electronic instruments',
                 $create_user_id => 1,
-                $photo => '',
+                $photo => '/assets/electronic-instrument.jpg',
             ],
             [
-                $name => 'bubnjevi',
+                $name => 'Equipment',
                 $create_user_id => 1,
-                $photo => '',
+                $photo => '/assets/equipment.jpg',
             ],
             [
-                $name => 'harmonike',
+                $name => 'Guitars',
                 $create_user_id => 1,
-                $photo => '',
+                $photo => '/assets/guitars.jpg',
             ],
             [
-                $name => 'trube',
+                $name => 'Pianos',
                 $create_user_id => 1,
-                $photo => '',
+                $photo => '/assets/pianos.jpg',
             ],
             [
-                $name => 'tambure',
+                $name => 'Strings',
                 $create_user_id => 1,
-                $photo => '',
+                $photo => '/assets/String.jpg',
+            ],
+            [
+                $name => 'Wind',
+                $create_user_id => 1,
+                $photo => '/assets/Wind.jpg',
             ],
             ]);
     }

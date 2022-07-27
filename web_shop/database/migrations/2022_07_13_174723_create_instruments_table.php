@@ -21,6 +21,9 @@ return new class extends Migration
             $table->text('description');
             $table->integer('quantity');
             $table->timestamps();
+            $table->string('dimensions');
+            $table->string('weight');
+            $table->string('color');
 
             $table->foreignId('instrument_category_id')->constrained();
         });
