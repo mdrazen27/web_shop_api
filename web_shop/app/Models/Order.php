@@ -13,7 +13,7 @@ class Order extends Model
 
     public function hasManyBaskets(): HasMany
     {
-        return $this->hasMany(Basket::class,'orders_id','id');
+        return $this->hasMany(Basket::class,'orders_id','id')->with('belongsToInstrument');
     }
 
     public function belongsToUser(): BelongsTo

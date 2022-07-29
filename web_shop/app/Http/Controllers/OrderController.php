@@ -9,7 +9,6 @@ use App\Http\Requests\StoreOrderRequest;
 use App\Http\Requests\UpdateOrderRequest;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Auth;
-use Spatie\FlareClient\Http\Exceptions\NotFound;
 
 class OrderController extends Controller
 {
@@ -21,12 +20,12 @@ class OrderController extends Controller
     public function index(): JsonResponse
     {
         if(Auth::user()->admin){
-            $orders = Order::with('hasManyBaskets')->whereHas('hasManyBaskets')->get();
+            $orders = Order::query()->get(['id','created_at']);//with('hasManyBaskets')->whereHas('hasManyBaskets')->get();
         }
         else{
-            $orders = Order::with('hasManyBaskets')->whereHas('hasManyBaskets')->where('users_id','=',Auth::id())->get();
+            $orders = Order::query()->where('users_id','=',Auth::id())->get(['id','created_at']);//with('hasManyBaskets')->whereHas('hasManyBaskets')->where('users_id','=',Auth::id())->get();
         }
-//        dd($orders);
+
         return response()->json([
             'success' => true,
             'message' => 'Orders received',
@@ -52,30 +51,47 @@ class OrderController extends Controller
      */
     public function store(StoreOrderRequest $request): JsonResponse
     {
+        if(!Auth::user()->verified){
+            return response()->json([
+                'success' => false,
+                'message' => 'Please contact admins so your account gets verified',
+            ],401);
+        }
         $order = new Order();
+        static $failed = 0;
         $order->users_id = Auth::id();
-        $items = collect($request->items)->map(function ($quantity,$item){
+        $items = collect($request->items)->map(function ($quantity,$item) use (&$failed){
             $basketItem = new Basket();
-            try{
+//            dd($failed+=1);
+
+//            try{
             $instrument = Instrument::findOrFail($item);
             $basketItem->instruments_id = $instrument->id;
             $basketItem->total_price = $quantity * $instrument->price;
             $basketItem->quantity = $quantity;
 //            dd($instrument->id);
             if($quantity > $instrument->quantity){
-                throw new \Exception('Instrument quantity is not valid');
+                $failed =1;
+//                throw new \Exception('Instrument quantity is not valid');
             }
-            }
-            catch(\Exception){
-                echo json_encode([
-                   'message' => 'Instrument quantity is invalid',
-                    'status' => 200,
-                    'success' => false
-                ]);
-//                throw new \Error('Instrument id is not valid');
-            }
+//            }
+//            catch(\Exception){
+//                echo json_encode([
+//                   'message' => 'Instrument quantity is invalid',
+//                    'status' => 200,
+//                    'success' => false
+//                ]);
+////                throw new \Error('Instrument id is not valid');
+//            }
             return [$basketItem,$instrument];
         });
+        if($failed){
+            return response()->json([
+                'success' => false,
+                'message' => 'Instrument quantity is invalid',
+//                'data' => "Funds needed $price_summed"
+            ],402);
+        }
         $price_summed = $items->reduce(function ($carry,$item){
            return $carry + $item[0]->total_price;
         },0);
@@ -83,7 +99,7 @@ class OrderController extends Controller
         if($price_summed > Auth::user()->funds){
             return response()->json([
                 'success' => false,
-                'message' => 'Insufficient FUNds',
+                'message' => 'Insufficient funds',
                 'data' => "Funds needed $price_summed"
             ],402);
         }
@@ -103,15 +119,24 @@ class OrderController extends Controller
         ],200);
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Order  $order
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Order $order)
+
+    public function show(Order $order): JsonResponse
     {
-        //
+//dd(Order::where('id','=',request('id'))->first('users_id')->users_id == Auth::user()->id || Auth::user()->admin);
+        if(Order::where('id','=',request('id'))->first('users_id')->users_id == Auth::user()->id || Auth::user()->admin){
+//            dd(Order::where('id','=',request('id'))->with('hasManyBaskets')->get());
+            $order = Order::findOrFail(request()->id)->with('hasManyBaskets','belongsToUser')->get();
+            return response()->json([
+                'success' => false,
+                'message' => 'Purchases displayed',
+                'data' => $order
+            ],200);
+        }
+            return response()->json([
+                'success' => false,
+                'message' => 'Only admin and person who bought this can see it',
+            ],401);
+
     }
 
     /**
