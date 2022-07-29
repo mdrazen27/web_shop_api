@@ -24,6 +24,7 @@ return new class extends Migration
             $table->string('dimensions');
             $table->string('weight');
             $table->string('color');
+            $table->float('rate')->nullable();
 
             $table->foreignId('instrument_category_id')->constrained();
         });

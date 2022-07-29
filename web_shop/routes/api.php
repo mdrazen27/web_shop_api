@@ -46,6 +46,9 @@ Route::group(['middleware' => ['auth:sanctum']],function(){
     Route::post('/instrument/{instrument}/rate',[InstrumentController::class,'rateInstrument']);
     Route::post('/buy', [OrderController::class,'store']);
     Route::get('/purchases',[OrderController::class,'index']);
+    Route::get('/users',[UserController::class,'index']);
+    Route::post('/verify/{id}',[UserController::class,'verifyUser']);
+    Route::get('/purchases/{id}',[OrderController::class,'show']);
 //    Route::put('/instrument/{instrument}/rate',[InstrumentController::class,'updateRate']);
 
 
