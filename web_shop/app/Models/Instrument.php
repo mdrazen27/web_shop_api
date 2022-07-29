@@ -11,7 +11,7 @@ class Instrument extends Model
 {
     use HasFactory;
 
-    protected $guarded=['id'];
+    protected $guarded=['id','rate'];
     public function belongsToInstrumentCategory(): BelongsTo
     {
         return $this->belongsTo(InstrumentCategory::class,'instrument_category_id');

@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Basket extends Model
 {
     use HasFactory;
+
+    public function belongsToInstrument(){
+        return $this->belongsTo(Instrument::class,'instruments_id','id');
+    }
 }

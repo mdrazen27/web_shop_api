@@ -20,8 +20,28 @@ class InstrumentController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(): JsonResponse
-    { $instruments = Instrument::paginate( $perPage = 4, $columns = ['*'], $pageName = 'page');
+    public function index(): JsonResponse{
+
+        if(request('category_id')){
+            $category = ['instrument_category_id','=',request('category_id')];
+        }
+        else $category = 0;
+        if(request('instrument_name')){
+            $name = ['name','like','%'.request('instrument_name').'%'];
+        }
+        else {$name = 0;}
+        if($name && $category) {
+            $instruments = Instrument::where([$name, $category])->paginate($perPage = 4, $columns = ['*'], $pageName = 'page');
+        }
+        elseif ($name){
+            $instruments = Instrument::where([$name])->paginate($perPage = 4, $columns = ['*'], $pageName = 'page');
+        }
+        elseif ($category) {
+            $instruments = Instrument::where([$category])->paginate($perPage = 4, $columns = ['*'], $pageName = 'page');
+        }
+        else{
+            $instruments = Instrument::paginate($perPage = 4, $columns = ['*'], $pageName = 'page');
+        }
         return response()->json([
             'success' => true,
             'message' => 'All instruments received!',
@@ -68,6 +88,8 @@ class InstrumentController extends Controller
     {
         $id = $instrument->id;
         $rate = InstrumentGrade::where('instruments_id','=',$id)->avg('grade');
+        $instrument->rate = $rate;
+        $instrument->save();
         $totalVotes = InstrumentGrade::totalVotesForSingleInstrument($id);
         $comments = Comment::with('belongsToUser:id,first_name,last_name')->where('instruments_id','=',$id)->paginate(10,['id','comment','users_id']);
         return response()->json([
