@@ -28,7 +28,7 @@ class InstrumentSeeder extends Seeder
         DB::table('instruments')->insert([
             [
                 $name => 'DW DESIGN MINI PRO BS drum kit',
-                $photo => '/assets/DW-DESIGN-MINI-PRO-BS-drum-kit.jpg',
+                $photo => 'http://localhost:8000/assets/DW-DESIGN-MINI-PRO-BS-drum-kit.jpg',
                 $price => 250,
                 $description => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus accusantium, asperiores dicta dolorum ea error eveniet ex excepturi illo iure magnam modi, nemo placeat provident recusandae rem repellat unde vel!',
                 $quantity => 3,
@@ -39,7 +39,7 @@ class InstrumentSeeder extends Seeder
             ],
             [
                 $name => 'Gretsch GE4-E605-4 Drum Kit',
-                $photo => '/assets/Gretsch-GE4-E605-4-Drum-Kit.jpg',
+                $photo => 'http://localhost:8000/assets/Gretsch-GE4-E605-4-Drum-Kit.jpg',
                 $price => '300',
                 $description => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus accusantium, asperiores dicta dolorum ea error eveniet ex excepturi illo iure magnam modi, nemo placeat provident recusandae rem repellat unde vel!',
                 $quantity => 10,
@@ -50,7 +50,7 @@ class InstrumentSeeder extends Seeder
             ],
             [
                 $name => 'PDP CE 20 BS drum kit',
-                $photo => '/assets/PDP-CE-20-BS-drum-kit.jpg',
+                $photo => 'http://localhost:8000/assets/PDP-CE-20-BS-drum-kit.jpg',
                 $price => 9999,
                 $description => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus accusantium, asperiores dicta dolorum ea error eveniet ex excepturi illo iure magnam modi, nemo placeat provident recusandae rem repellat unde vel!',
                 $quantity => 1,
@@ -61,7 +61,7 @@ class InstrumentSeeder extends Seeder
             ],
             [
                 $name => 'Pearl Export drum',
-                $photo => '/assets/Pearl-Export-drum.jpg',
+                $photo => 'http://localhost:8000/assets/Pearl-Export-drum.jpg',
                 $price => 999,
                 $description => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus accusantium, asperiores dicta dolorum ea error eveniet ex excepturi illo iure magnam modi, nemo placeat provident recusandae rem repellat unde vel!',
                 $quantity => 1,
@@ -72,7 +72,7 @@ class InstrumentSeeder extends Seeder
             ],
             [
                 $name => 'Flight EIB-10 BLK electric guitar',
-                $photo => '/assets/Flight-EIB-10-BLK-electric-guitar.jpg',
+                $photo => 'http://localhost:8000/assets/Flight-EIB-10-BLK-electric-guitar.jpg',
                 $price => 50,
                 $description => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus accusantium, asperiores dicta dolorum ea error eveniet ex excepturi illo iure magnam modi, nemo placeat provident recusandae rem repellat unde vel!',
                 $quantity => 5,
@@ -83,7 +83,7 @@ class InstrumentSeeder extends Seeder
             ],
             [
                 $name => 'Gewa Germania electric violin',
-                $photo => '/assets/Gewa-Germania-electric-violin.jpg',
+                $photo => 'http://localhost:8000/assets/Gewa-Germania-electric-violin.jpg',
                 $price => 50,
                 $description => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus accusantium, asperiores dicta dolorum ea error eveniet ex excepturi illo iure magnam modi, nemo placeat provident recusandae rem repellat unde vel!',
                 $quantity => 5,
@@ -94,7 +94,7 @@ class InstrumentSeeder extends Seeder
             ],
             [
                 $name => 'Korg LP 380-BK electric piano',
-                $photo => '/assets/Korg-LP-380-BK-electric-piano.jpg',
+                $photo => 'http://localhost:8000/assets/Korg-LP-380-BK-electric-piano.jpg',
                 $price => 50,
                 $description => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus accusantium, asperiores dicta dolorum ea error eveniet ex excepturi illo iure magnam modi, nemo placeat provident recusandae rem repellat unde vel!',
                 $quantity => 5,
@@ -107,7 +107,7 @@ class InstrumentSeeder extends Seeder
 
             [
                 $name => 'Blackstar FLY BASS amplifier for bass guitar',
-                $photo => '/assets/Blackstar FLY BASS amplifier for bass guitar.jpg',
+                $photo => 'http://localhost:8000/assets/Blackstar FLY BASS amplifier for bass guitar.jpg',
                 $price => 50,
                 $description => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus accusantium, asperiores dicta dolorum ea error eveniet ex excepturi illo iure magnam modi, nemo placeat provident recusandae rem repellat unde vel!',
                 $quantity => 5,
@@ -118,7 +118,7 @@ class InstrumentSeeder extends Seeder
             ],
             [
                 $name => 'Boston JP - jack plate',
-                $photo => '/assets/Boston JP - jack plate.jpg',
+                $photo => 'http://localhost:8000/assets/Boston JP - jack plate.jpg',
                 $price => 50,
                 $description => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus accusantium, asperiores dicta dolorum ea error eveniet ex excepturi illo iure magnam modi, nemo placeat provident recusandae rem repellat unde vel!',
                 $quantity => 5,
@@ -129,7 +129,7 @@ class InstrumentSeeder extends Seeder
             ],
             [
                 $name => "D'Addario strings for classical guitar",
-                $photo => '/assets/DAddario strings for classical guitar.jpg',
+                $photo => 'http://localhost:8000/assets/DAddario strings for classical guitar.jpg',
                 $price => 50,
                 $description => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus accusantium, asperiores dicta dolorum ea error eveniet ex excepturi illo iure magnam modi, nemo placeat provident recusandae rem repellat unde vel!',
                 $quantity => 5,
@@ -140,7 +140,7 @@ class InstrumentSeeder extends Seeder
             ],
             [
                 $name => "Gewa Pure 407003 gudalo za violinu 12",
-                $photo => '/assets/Gewa Pure 407003 gudalo za violinu 12.jpg',
+                $photo => 'http://localhost:8000/assets/Gewa Pure 407003 gudalo za violinu 12.jpg',
                 $price => 50,
                 $description => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus accusantium, asperiores dicta dolorum ea error eveniet ex excepturi illo iure magnam modi, nemo placeat provident recusandae rem repellat unde vel!',
                 $quantity => 5,
@@ -151,7 +151,7 @@ class InstrumentSeeder extends Seeder
             ],
             [
                 $name => "Partsland A250k potencimeter",
-                $photo => '/assets/Partsland A250k potencimeter.jpg',
+                $photo => 'http://localhost:8000/assets/Partsland A250k potencimeter.jpg',
                 $price => 50,
                 $description => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus accusantium, asperiores dicta dolorum ea error eveniet ex excepturi illo iure magnam modi, nemo placeat provident recusandae rem repellat unde vel!',
                 $quantity => 5,
@@ -162,7 +162,7 @@ class InstrumentSeeder extends Seeder
             ],
             [
                 $name => "Peavey Vypyr guitar amp",
-                $photo => '/assets/Peavey Vypyr guitar amp.jpg',
+                $photo => 'http://localhost:8000/assets/Peavey Vypyr guitar amp.jpg',
                 $price => 50,
                 $description => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus accusantium, asperiores dicta dolorum ea error eveniet ex excepturi illo iure magnam modi, nemo placeat provident recusandae rem repellat unde vel!',
                 $quantity => 5,
@@ -173,7 +173,7 @@ class InstrumentSeeder extends Seeder
             ],
             [
                 $name => "RotoSound RS1000 Violin Strings 44",
-                $photo => '/assets/RotoSound RS1000 Violin Strings 44.jpg',
+                $photo => 'http://localhost:8000/assets/RotoSound RS1000 Violin Strings 44.jpg',
                 $price => 50,
                 $description => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus accusantium, asperiores dicta dolorum ea error eveniet ex excepturi illo iure magnam modi, nemo placeat provident recusandae rem repellat unde vel!',
                 $quantity => 5,
@@ -186,7 +186,7 @@ class InstrumentSeeder extends Seeder
 
             [
                 $name => "VGS Gewa",
-                $photo => '/assets/VGS Gewa.jpg',
+                $photo => 'http://localhost:8000/assets/VGS Gewa.jpg',
                 $price => 50,
                 $description => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus accusantium, asperiores dicta dolorum ea error eveniet ex excepturi illo iure magnam modi, nemo placeat provident recusandae rem repellat unde vel!',
                 $quantity => 5,
@@ -197,7 +197,7 @@ class InstrumentSeeder extends Seeder
             ],
             [
                 $name => "Sadowsky MetroExpress Bass guitar",
-                $photo => '/assets/Sadowsky MetroExpress Bass guitar.jpg',
+                $photo => 'http://localhost:8000/assets/Sadowsky MetroExpress Bass guitar.jpg',
                 $price => 50,
                 $description => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus accusantium, asperiores dicta dolorum ea error eveniet ex excepturi illo iure magnam modi, nemo placeat provident recusandae rem repellat unde vel!',
                 $quantity => 5,
@@ -208,7 +208,7 @@ class InstrumentSeeder extends Seeder
             ],
             [
                 $name => "Ortega R158SN",
-                $photo => '/assets/Ortega R158SN.jpg',
+                $photo => 'http://localhost:8000/assets/Ortega R158SN.jpg',
                 $price => 50,
                 $description => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus accusantium, asperiores dicta dolorum ea error eveniet ex excepturi illo iure magnam modi, nemo placeat provident recusandae rem repellat unde vel!',
                 $quantity => 5,
@@ -219,7 +219,7 @@ class InstrumentSeeder extends Seeder
             ],
             [
                 $name => "LAG-TKU8C Concert guitar",
-                $photo => '/assets/LAG-TKU8C Concert guitar.jpg',
+                $photo => 'http://localhost:8000/assets/LAG-TKU8C Concert guitar.jpg',
                 $price => 50,
                 $description => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus accusantium, asperiores dicta dolorum ea error eveniet ex excepturi illo iure magnam modi, nemo placeat provident recusandae rem repellat unde vel!',
                 $quantity => 5,
@@ -232,7 +232,7 @@ class InstrumentSeeder extends Seeder
 
             [
                 $name => "Kawai E-200-BKM piano",
-                $photo => '/assets/Kawai E-200-BKM piano.jpg',
+                $photo => 'http://localhost:8000/assets/Kawai E-200-BKM piano.jpg',
                 $price => 50,
                 $description => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus accusantium, asperiores dicta dolorum ea error eveniet ex excepturi illo iure magnam modi, nemo placeat provident recusandae rem repellat unde vel!',
                 $quantity => 5,
@@ -243,7 +243,7 @@ class InstrumentSeeder extends Seeder
             ],
             [
                 $name => "Kawai K-15E  piano",
-                $photo => '/assets/Kawai K-15E  piano.jpg',
+                $photo => 'http://localhost:8000/assets/Kawai K-15E  piano.jpg',
                 $price => 50,
                 $description => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus accusantium, asperiores dicta dolorum ea error eveniet ex excepturi illo iure magnam modi, nemo placeat provident recusandae rem repellat unde vel!',
                 $quantity => 5,
@@ -254,7 +254,7 @@ class InstrumentSeeder extends Seeder
             ],
             [
                 $name => "Ritmuller EU 131 - Concert Pianino",
-                $photo => '/assets/Ritmuller EU 131 - Concert Pianino.jpg',
+                $photo => 'http://localhost:8000/assets/Ritmuller EU 131 - Concert Pianino.jpg',
                 $price => 50,
                 $description => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus accusantium, asperiores dicta dolorum ea error eveniet ex excepturi illo iure magnam modi, nemo placeat provident recusandae rem repellat unde vel!',
                 $quantity => 5,
@@ -265,7 +265,7 @@ class InstrumentSeeder extends Seeder
             ],
             [
                 $name => "Ritmuller GP 148R Grand Piano",
-                $photo => '/assets/Ritmuller GP 148R Grand Piano.jpg',
+                $photo => 'http://localhost:8000/assets/Ritmuller GP 148R Grand Piano.jpg',
                 $price => 50,
                 $description => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus accusantium, asperiores dicta dolorum ea error eveniet ex excepturi illo iure magnam modi, nemo placeat provident recusandae rem repellat unde vel!',
                 $quantity => 5,
@@ -278,7 +278,7 @@ class InstrumentSeeder extends Seeder
 
             [
                 $name => "Gewa Allegro 44 violine",
-                $photo => '/assets/Gewa Allegro 44 violine.jpg',
+                $photo => 'http://localhost:8000/assets/Gewa Allegro 44 violine.jpg',
                 $price => 50,
                 $description => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus accusantium, asperiores dicta dolorum ea error eveniet ex excepturi illo iure magnam modi, nemo placeat provident recusandae rem repellat unde vel!',
                 $quantity => 5,
@@ -289,7 +289,7 @@ class InstrumentSeeder extends Seeder
             ],
             [
                 $name => "Gewa Outfit Allegro viola 33 cm",
-                $photo => '/assets/Gewa Outfit Allegro viola 33 cm.jpg',
+                $photo => 'http://localhost:8000/assets/Gewa Outfit Allegro viola 33 cm.jpg',
                 $price => 50,
                 $description => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus accusantium, asperiores dicta dolorum ea error eveniet ex excepturi illo iure magnam modi, nemo placeat provident recusandae rem repellat unde vel!',
                 $quantity => 5,
@@ -300,7 +300,7 @@ class InstrumentSeeder extends Seeder
             ],
             [
                 $name => "Gewa Pure Outfit HW Cello 44",
-                $photo => '/assets/Gewa Pure Outfit HW Cello 44.jpg',
+                $photo => 'http://localhost:8000/assets/Gewa Pure Outfit HW Cello 44.jpg',
                 $price => 50,
                 $description => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus accusantium, asperiores dicta dolorum ea error eveniet ex excepturi illo iure magnam modi, nemo placeat provident recusandae rem repellat unde vel!',
                 $quantity => 5,
@@ -311,7 +311,7 @@ class InstrumentSeeder extends Seeder
             ],
             [
                 $name => "Leonardo LV-1512 violin",
-                $photo => '/assets/Leonardo LV-1512 violin.jpg',
+                $photo => 'http://localhost:8000/assets/Leonardo LV-1512 violin.jpg',
                 $price => 50,
                 $description => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus accusantium, asperiores dicta dolorum ea error eveniet ex excepturi illo iure magnam modi, nemo placeat provident recusandae rem repellat unde vel!',
                 $quantity => 5,
@@ -322,7 +322,7 @@ class InstrumentSeeder extends Seeder
             ],
             [
                 $name => "Leonardo LV-2044 Violine",
-                $photo => '/assets/Leonardo LV-2044 Violine.jpg',
+                $photo => 'http://localhost:8000/assets/Leonardo LV-2044 Violine.jpg',
                 $price => 50,
                 $description => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus accusantium, asperiores dicta dolorum ea error eveniet ex excepturi illo iure magnam modi, nemo placeat provident recusandae rem repellat unde vel!',
                 $quantity => 5,
@@ -335,7 +335,7 @@ class InstrumentSeeder extends Seeder
 
             [
                 $name => "Paxman Model 23 French Horn",
-                $photo => '/assets/Paxman Model 23 French Horn.jpg',
+                $photo => 'http://localhost:8000/assets/Paxman Model 23 French Horn.jpg',
                 $price => 50,
                 $description => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus accusantium, asperiores dicta dolorum ea error eveniet ex excepturi illo iure magnam modi, nemo placeat provident recusandae rem repellat unde vel!',
                 $quantity => 5,
@@ -346,7 +346,7 @@ class InstrumentSeeder extends Seeder
             ],
             [
                 $name => "Selmer Super Action 80 Saxophone",
-                $photo => '/assets/Selmer Super Action 80 Saxophone.jpg',
+                $photo => 'http://localhost:8000/assets/Selmer Super Action 80 Saxophone.jpg',
                 $price => 50,
                 $description => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus accusantium, asperiores dicta dolorum ea error eveniet ex excepturi illo iure magnam modi, nemo placeat provident recusandae rem repellat unde vel!',
                 $quantity => 5,
@@ -357,7 +357,7 @@ class InstrumentSeeder extends Seeder
             ],
             [
                 $name => "Trevor James 5X 3005EW",
-                $photo => '/assets/Trevor James 5X 3005EW.jpg',
+                $photo => 'http://localhost:8000/assets/Trevor James 5X 3005EW.jpg',
                 $price => 50,
                 $description => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus accusantium, asperiores dicta dolorum ea error eveniet ex excepturi illo iure magnam modi, nemo placeat provident recusandae rem repellat unde vel!',
                 $quantity => 5,
@@ -368,7 +368,7 @@ class InstrumentSeeder extends Seeder
             ],
             [
                 $name => "Vincent Bach 181L kornet",
-                $photo => '/assets/Vincent Bach 181L kornet.jpg',
+                $photo => 'http://localhost:8000/assets/Vincent Bach 181L kornet.jpg',
                 $price => 50,
                 $description => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus accusantium, asperiores dicta dolorum ea error eveniet ex excepturi illo iure magnam modi, nemo placeat provident recusandae rem repellat unde vel!',
                 $quantity => 5,

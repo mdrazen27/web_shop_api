@@ -22,37 +22,37 @@ class InstrumentCategorySeeder extends Seeder
             [
                 $name => 'Drums',
                 $create_user_id => 1,
-                $photo => '/assets/drums.jpg',
+                $photo => 'http://localhost:8000/assets/drums.jpg',
             ],
             [
                 $name => 'Electronic instruments',
                 $create_user_id => 1,
-                $photo => '/assets/electronic-instrument.jpg',
+                $photo => 'http://localhost:8000/assets/electronic-instrument.jpg',
             ],
             [
                 $name => 'Equipment',
                 $create_user_id => 1,
-                $photo => '/assets/equipment.jpg',
+                $photo => 'http://localhost:8000/assets/equipment.jpg',
             ],
             [
                 $name => 'Guitars',
                 $create_user_id => 1,
-                $photo => '/assets/guitars.jpg',
+                $photo => 'http://localhost:8000/assets/guitars.jpg',
             ],
             [
                 $name => 'Pianos',
                 $create_user_id => 1,
-                $photo => '/assets/pianos.jpg',
+                $photo => 'http://localhost:8000/assets/pianos.jpg',
             ],
             [
                 $name => 'Strings',
                 $create_user_id => 1,
-                $photo => '/assets/String.jpg',
+                $photo => 'http://localhost:8000/assets/String.jpg',
             ],
             [
                 $name => 'Wind',
                 $create_user_id => 1,
-                $photo => '/assets/Wind.jpg',
+                $photo => 'http://localhost:8000/assets/Wind.jpg',
             ],
             ]);
     }
