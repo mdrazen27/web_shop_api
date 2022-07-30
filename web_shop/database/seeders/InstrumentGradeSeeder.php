@@ -36,7 +36,7 @@ class InstrumentGradeSeeder extends Seeder
                 $users_id => 5,
             ],
             [
-                $grade => 1,
+                $grade => 4,
                 $instruments_id => 2,
                 $users_id => 4,
             ],
@@ -44,6 +44,21 @@ class InstrumentGradeSeeder extends Seeder
                 $grade => 4,
                 $instruments_id => 2,
                 $users_id => 5,
+            ],
+            [
+                $grade => 5,
+                $instruments_id => 11,
+                $users_id => 3,
+            ],
+            [
+                $grade => 5,
+                $instruments_id => 20,
+                $users_id => 3,
+            ],
+            [
+                $grade => 4,
+                $instruments_id => 30,
+                $users_id => 3,
             ],
         ]);
     }

@@ -7,6 +7,7 @@ use App\Http\Requests\StoreInstrumentCategoryRequest;
 use App\Http\Requests\UpdateInstrumentCategoryRequest;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class InstrumentCategoryController extends Controller
 {
@@ -17,10 +18,19 @@ class InstrumentCategoryController extends Controller
      */
     public function index(): JsonResponse
     {
+        $bestRatedInstruments = (DB::select('Select avg(instrument_grades.grade) as average_rate,instruments.*,instrument_grades.instruments_id
+                            from instrument_grades join instruments
+                            where instrument_grades.instruments_id = instruments.id
+                            group by instrument_grades.instruments_id
+                            order by average_rate desc
+                            limit 4
+                            '));
+
         return response()->json([
             'success' => true,
             'message' => 'All categories received!',
             'data' => InstrumentCategory::all(['id','photo','name']),
+            'bestRatedInstruments' => $bestRatedInstruments,
         ], 200);
     }
 

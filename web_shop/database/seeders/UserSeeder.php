@@ -48,7 +48,7 @@ class UserSeeder extends Seeder
             [
                 $first_name => 'John',
                 $last_name => 'Doe',
-                $verified => 0,
+                $verified => 1,
                 $email => 'johndoe@user.com',
                 $photo => '',
                 $admin => 0,
@@ -57,7 +57,7 @@ class UserSeeder extends Seeder
             [
                 $first_name => 'John2',
                 $last_name => 'Doe2',
-                $verified => 0,
+                $verified => 1,
                 $email => 'johndoe2@user.com',
                 $photo => '',
                 $admin => 0,
@@ -66,7 +66,7 @@ class UserSeeder extends Seeder
             [
                 $first_name => 'John3',
                 $last_name => 'Doe3',
-                $verified => 0,
+                $verified => 1,
                 $email => 'johndoe3@user.com',
                 $photo => '',
                 $admin => 0,

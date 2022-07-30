@@ -31,16 +31,16 @@ class InstrumentController extends Controller
         }
         else {$name = 0;}
         if($name && $category) {
-            $instruments = Instrument::where([$name, $category])->paginate($perPage = 4, $columns = ['*'], $pageName = 'page');
+            $instruments = Instrument::where([$name, $category])->get();//->paginate($perPage = 4, $columns = ['*'], $pageName = 'page');
         }
         elseif ($name){
-            $instruments = Instrument::where([$name])->paginate($perPage = 4, $columns = ['*'], $pageName = 'page');
+            $instruments = Instrument::where([$name])->get();//->paginate($perPage = 4, $columns = ['*'], $pageName = 'page');
         }
         elseif ($category) {
-            $instruments = Instrument::where([$category])->paginate($perPage = 4, $columns = ['*'], $pageName = 'page');
+            $instruments = Instrument::where([$category])->get();//->paginate($perPage = 4, $columns = ['*'], $pageName = 'page');
         }
         else{
-            $instruments = Instrument::paginate($perPage = 4, $columns = ['*'], $pageName = 'page');
+            $instruments = Instrument::all();//paginate($perPage = 4, $columns = ['*'], $pageName = 'page');
         }
         return response()->json([
             'success' => true,
