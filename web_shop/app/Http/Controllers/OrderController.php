@@ -125,7 +125,7 @@ class OrderController extends Controller
 //dd(Order::where('id','=',request('id'))->first('users_id')->users_id == Auth::user()->id || Auth::user()->admin);
         if(Order::where('id','=',request('id'))->first('users_id')->users_id == Auth::user()->id || Auth::user()->admin){
 //            dd(Order::where('id','=',request('id'))->with('hasManyBaskets')->get());
-            $order = Order::findOrFail(request()->id)->with('hasManyBaskets','belongsToUser')->where('id','=',request('id'))->get();
+            $order = Order::findOrFail(request()->id)->with('hasManyBaskets','belongsToUser')->where('id','=',request('id'))->first();
             return response()->json([
                 'success' => false,
                 'message' => 'Purchases displayed',
