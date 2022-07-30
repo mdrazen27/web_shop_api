@@ -32,7 +32,7 @@ class UserSeeder extends Seeder
                 $email => 'eris@admin.com',
                 $photo => '',
                 $admin => 1,
-                $password => bcrypt('password'),
+                $password => bcrypt('Password1'),
 
             ],
             [
@@ -42,7 +42,7 @@ class UserSeeder extends Seeder
                 $email => 'antonije@admin.com',
                 $photo => '',
                 $admin => 1,
-                $password => bcrypt('password'),
+                $password => bcrypt('Password1'),
 
             ],
             [
@@ -52,7 +52,7 @@ class UserSeeder extends Seeder
                 $email => 'johndoe@user.com',
                 $photo => '',
                 $admin => 0,
-                $password => bcrypt('password'),
+                $password => bcrypt('Password1'),
             ],
             [
                 $first_name => 'John2',
@@ -61,7 +61,7 @@ class UserSeeder extends Seeder
                 $email => 'johndoe2@user.com',
                 $photo => '',
                 $admin => 0,
-                $password => bcrypt('password'),
+                $password => bcrypt('Password1'),
             ],
             [
                 $first_name => 'John3',
@@ -70,7 +70,7 @@ class UserSeeder extends Seeder
                 $email => 'johndoe3@user.com',
                 $photo => '',
                 $admin => 0,
-                $password => bcrypt('password'),
+                $password => bcrypt('Password1'),
             ],
         ]);
 
