@@ -92,7 +92,7 @@ class UserController extends Controller
         if(Auth::user()->admin){
             $id = intval($id);
 
-            $user = User::findOrFail($id,['first_name','last_name','email','verified']);
+            $user = User::findOrFail($id);
             $user->verified = 1;
             $user->save();
             return response()->json([
